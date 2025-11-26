@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 # Создаем таблицу в базе данных и ее колонки
 class Category(models.Model):
-    #Сохдание колоннок в таблице
+    #Содание колоннок в таблице
     name = models.CharField(max_length=20) # создание Str поля с ограничением символов
     description = models.TextField(blank=True) # Создание Str поля большого количества текста
 
@@ -28,7 +28,7 @@ class Post(models.Model):
 
     # One-to-Many - один автор много постов 
     author = models.ForeignKey(User,on_delete=models.CASCADE)
-    #ForeignKey связь одтн ко многим 
+    #ForeignKey связь один ко многим 
     #on_delete=models.CASCADE - При удаление родителя удаляеться доченирнеи записи 
 
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True)
